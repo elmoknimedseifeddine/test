@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "152e4e97-6270-4246-a02e-28e5401c3ca9",
+		"name": "BookinAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "check-availability",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/booking/check-availability/?roomId=1&start=2022-05-10&end=2022-05-15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"booking",
+						"check-availability",
+						""
+					],
+					"query": [
+						{
+							"key": "roomId",
+							"value": "1"
+						},
+						{
+							"key": "start",
+							"value": "2022-05-10"
+						},
+						{
+							"key": "end",
+							"value": "2022-05-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roomId\": 1 ,\r\n    \"start\": \"2022-05-01\" , \r\n    \"end\": \"2022-05-03\",\r\n    \"clients\":[\r\n        {\r\n            \"email\": \"elmoknimed@gmail.com\" , \r\n            \"name\": \"Mohamed Seifeddine MOKNI\" , \r\n            \"organizer\": true \r\n        } , \r\n        {\r\n            \"email\": \"testemail@gmail.com\" , \r\n            \"name\": \"Client name\" , \r\n            \"organizer\": false \r\n        } , \r\n        {\r\n            \"email\": \"testemail2@gmail.com\" , \r\n            \"name\": \"Client name 1\" , \r\n            \"organizer\": false \r\n        } \r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/booking/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"booking",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update reservation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roomId\": 1 ,\r\n    \"start\": \"2022-05-05\" , \r\n    \"end\": \"2022-05-08\",\r\n    \"reservationId\": 13 , \r\n    \"clients\":[\r\n        {\r\n            \"email\": \"elmoknimed@gmail.com\" , \r\n            \"name\": \"Mohamed Seifeddine MOKNI\" , \r\n            \"organizer\": true \r\n        } , \r\n        {\r\n            \"email\": \"testemail@gmail.com\" , \r\n            \"name\": \"Client name\" , \r\n            \"organizer\": false \r\n        } , \r\n        {\r\n            \"email\": \"testemail2@gmail.com\" , \r\n            \"name\": \"Client name 1\" , \r\n            \"organizer\": false \r\n        } \r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/booking/update-booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"booking",
+						"update-booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book room ko",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roomId\": 1 ,\r\n    \"start\": \"2022-05-01\" , \r\n    \"end\": \"2022-05-03\",\r\n    \"clients\":[\r\n        {\r\n            \"name\": \"Mohamed Seifeddine MOKNI\" , \r\n            \"organizer\": true \r\n        } , \r\n        {\r\n            \"name\": \"Client name\" , \r\n            \"organizer\": false \r\n        } , \r\n        {\r\n            \"name\": \"Client name 1\" , \r\n            \"organizer\": false \r\n        } \r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/booking/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"booking",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel reservation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"reservationId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/booking/cancelBooking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"booking",
+						"cancelBooking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
